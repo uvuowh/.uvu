@@ -7,6 +7,7 @@
 
 - link:
     ~/.config/ghostty/config: ghostty/config
+    ~/Library/Application Support/Code/User/settings.json: vscode/settings.json
     # 在这里添加更多配置文件链接
     # ~/.bashrc: bashrc
     # ~/.vimrc: vimrc
