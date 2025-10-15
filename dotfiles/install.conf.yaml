@@ -1,0 +1,22 @@
+- defaults:
+    link:
+      relink: true
+      create: true
+
+- clean: ['~']
+
+- link:
+    ~/.config/ghostty/config: ghostty/config
+    # 在这里添加更多配置文件链接
+    # ~/.bashrc: bashrc
+    # ~/.vimrc: vimrc
+    # ~/.config/nvim: config/nvim
+
+- create:
+    - ~/downloads
+    - ~/workspace
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
+  # 在这里添加需要执行的shell命令
+  # - [brew bundle, Installing Homebrew dependencies]
