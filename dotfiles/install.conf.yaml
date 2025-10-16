@@ -20,5 +20,9 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
+  # 禁用可能影响 AeroSpace 的 macOS 默认行为
+  - [defaults write -g NSWindowShouldDragOnGesture -bool true, Enable window dragging with Ctrl+Cmd+Click]
+  - [defaults write com.apple.dock expose-group-apps -bool false, Disable Mission Control app grouping]
+  - [defaults write com.apple.spaces spans-displays -bool false, Disable spaces spanning displays]
   # 在这里添加需要执行的shell命令
   # - [brew bundle, Installing Homebrew dependencies]
