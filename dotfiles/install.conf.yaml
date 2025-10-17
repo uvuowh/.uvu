@@ -8,7 +8,6 @@
 - link:
     ~/.config/ghostty/config: ghostty/config
     ~/Library/Application Support/Code/User/settings.json: vscode/settings.json
-    ~/.aerospace.toml: i3/.aerospace.toml
     # 在这里添加更多配置文件链接
     # ~/.bashrc: bashrc
     # ~/.vimrc: vimrc
@@ -20,14 +19,6 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
-  
-  # ========== AeroSpace 优化 ==========
-  # 禁用可能影响 AeroSpace 的 macOS 默认行为
-  - [defaults write -g NSWindowShouldDragOnGesture -bool true, Enable window dragging with Ctrl+Cmd+Click]
-  - [defaults write com.apple.dock expose-group-apps -bool false, Disable Mission Control app grouping]
-  - [defaults write com.apple.spaces spans-displays -bool false, Disable spaces spanning displays]
-  - [defaults write com.apple.dock mru-spaces -bool false, Disable automatic space rearrangement]
-  - [defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false, Disable press-and-hold for AeroSpace key repeat]
   
   # ========== Dock 优化 ==========
   - [defaults write com.apple.dock autohide -bool true, Enable Dock auto-hide]
