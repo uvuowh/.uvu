@@ -20,9 +20,47 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
+  
+  # ========== AeroSpace 优化 ==========
   # 禁用可能影响 AeroSpace 的 macOS 默认行为
   - [defaults write -g NSWindowShouldDragOnGesture -bool true, Enable window dragging with Ctrl+Cmd+Click]
   - [defaults write com.apple.dock expose-group-apps -bool false, Disable Mission Control app grouping]
   - [defaults write com.apple.spaces spans-displays -bool false, Disable spaces spanning displays]
+  - [defaults write com.apple.dock mru-spaces -bool false, Disable automatic space rearrangement]
+  - [defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false, Disable press-and-hold for AeroSpace key repeat]
+  
+  # ========== Dock 优化 ==========
+  - [defaults write com.apple.dock autohide -bool true, Enable Dock auto-hide]
+  - [defaults write com.apple.dock autohide-delay -float 0, Remove Dock auto-hide delay]
+  - [defaults write com.apple.dock autohide-time-modifier -float 0.5, Speed up Dock animation]
+  - [defaults write com.apple.dock show-recents -bool false, Hide recent applications in Dock]
+  - [defaults write com.apple.dock mineffect -string scale, Use scale effect for minimizing windows]
+  
+  # ========== Finder 优化 ==========
+  - [defaults write com.apple.finder ShowPathbar -bool true, Show path bar in Finder]
+  - [defaults write com.apple.finder ShowStatusBar -bool true, Show status bar in Finder]
+  - [defaults write com.apple.finder FXPreferredViewStyle -string Nlsv, Use list view in Finder by default]
+  - [defaults write NSGlobalDomain AppleShowAllExtensions -bool true, Show all file extensions]
+  - [defaults write com.apple.finder _FXShowPosixPathInTitle -bool true, Show full path in Finder title]
+  
+  # ========== 键盘优化 ==========
+  - [defaults write NSGlobalDomain KeyRepeat -int 2, Set fast key repeat rate]
+  - [defaults write NSGlobalDomain InitialKeyRepeat -int 15, Set short initial key repeat delay]
+  
+  # ========== 截图优化 ==========
+  - [defaults write com.apple.screencapture location -string "~/Pictures/Screenshots", Set screenshot location]
+  - [defaults write com.apple.screencapture type -string "png", Set screenshot format to PNG]
+  - [defaults write com.apple.screencapture disable-shadow -bool true, Disable screenshot shadows]
+  
+  # ========== 其他系统优化 ==========
+  - [defaults write com.apple.menuextra.clock DateFormat -string "EEE d MMM HH:mm:ss", Show date and time in menu bar]
+  - [defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false, Disable auto-correct]
+  - [defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false, Disable smart quotes]
+  - [defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false, Disable smart dashes]
+  
+  # ========== 应用更改 ==========
+  - [killall Dock, Restart Dock to apply changes]
+  - [killall Finder, Restart Finder to apply changes]
+  
   # 在这里添加需要执行的shell命令
   # - [brew bundle, Installing Homebrew dependencies]
